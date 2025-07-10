@@ -4,6 +4,6 @@ import { useUser } from '@clerk/clerk-expo';
 export default function Layout() {
   const {isSignedIn} = useUser();
 
-  if(!isSignedIn) return <Redirect href="/sign-in" />
+  if(!isSignedIn) return <Redirect href="/(auth)/sign-in" />
   return <Stack />
 }
