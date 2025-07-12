@@ -4,12 +4,12 @@ import dotenv from 'dotenv';
 import transactionRoute from './routes/transactions.route.js';
 import ratelimit from './middleware/rateLimiter.js'; // Import the rate limiting middleware
 import { connectToDatabase } from './config/db.js';
-import job from './config/cron.js';
+//import job from './config/cron.js';
 dotenv.config();
 
 const app = expess();
 
-if(process.env.NODE_ENV === "production") job.start(); // Start the cron job to send GET requests every 14 minutes
+//if(process.env.NODE_ENV === "production") job.start(); // Start the cron job to send GET requests every 14 minutes
 const PORT = process.env.PORT || 5001;
 app.use(cors());
 app.use(expess.json());

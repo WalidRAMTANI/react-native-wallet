@@ -3,7 +3,8 @@
 import { useCallback } from "react";
 import { Alert } from "react-native";
 import { useState } from "react";
-const API_URL = 'https://wallet-api-4rl1.onrender.com/api'; // Replace with your API URL
+import { API_URL } from "@/constants/api.js"; // Adjust the import path as necessary
+//const API_URL = 'https://wallet-api-4rl1.onrender.com/api'; // Replace with your API URL
 export const useTransactions = (userId) => {
      const [transactions, setTransactions] = useState([]);
      const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +37,7 @@ export const useTransactions = (userId) => {
         } catch (error) {
             console.error('Error fetching summary:', error);
         }
-     }, [userId]);
+     }, []);
 
      // to run the the previous function at the same time 
      const loadData = useCallback(async () => {
